@@ -6,51 +6,64 @@ class Persona:
        Se establecen metodos get y set para conseguir y modificar respectivamente cada atributo. 
     """
     def __init__(self, nombre: str, apellido: str, sexo: str, edad: int, estatura: float, peso:float) -> None:
-        self.nombre = nombre.capitalize()
-        self.apellido = apellido.capitalize()
-        self.sexo = sexo
-        self.edad = edad
-        self.estatura = estatura
-        self.peso = peso
+        self.__nombre = nombre.capitalize()
+        self.__apellido = apellido.capitalize()
+        self.__sexo = sexo
+        self.__edad = edad
+        self.__estatura = estatura
+        self.__peso = peso
 
     def __str__(self) -> str:
         return f"{self.nombre} {self.apellido} de sexo {self.sexo}, tiene una edad de {self.edad} años, mide {self.estatura} mts y pesa {self.peso} kg."
 
+    @property
     def get_nombre(self):
-        return self.nombre
+        return self.__nombre
     
+    @property
     def get_apellido(self):
-        return self.apellido
+        return self.__apellido
     
+    @property
     def get_sexo(self):
-        return self.sexo
+        return self.__sexo
     
+    @property
     def get_edad(self):
-        return self.edad
+        return self.__edad
     
+    @property
     def get_estatura(self):
-        return self.estatura
+        return self.__estatura
 
+    @property
     def get_peso(self):
-        return self.peso
+        return self.__peso
     
+    
+    @nombre.setter
     def set_nombre(self, nombre:str):
-        self.nombre = nombre.capitalize()
-        
+        self.__nombre = nombre.capitalize()
+     
+    @apellido.setter    
     def set_apellido(self, apellido:str):
-        self.apellido = apellido.capitalize()
+        self.__apellido = apellido.capitalize()
     
+    @sexo.setter
     def set_sexo(self, sexo:str):
-        self.sexo = sexo
+        self.__sexo = sexo
         
+    @edad.setter    
     def set_edad(self, edad:int):
-        self.edad = edad
+        self.__edad = edad
         
+    @estarura.setter    
     def set_estatura(self, estatura:float):
-        self.estatura = estatura    
+        self.__estatura = estatura    
     
+    @peso.setter  
     def set_peso(self, peso:float):
-        self.peso = peso
+        self.__peso = peso
     
 
 #Creación de objetos de clase Personas con sus respectivos atributos
